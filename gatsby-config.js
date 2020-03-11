@@ -1,7 +1,7 @@
 module.exports = {
   plugins: [
     'gatsby-plugin-sass',
-    'gatsby-theme-blog-core',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
@@ -36,24 +36,37 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'posts',
+        path: `${__dirname}/content/posts`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
         path: `${__dirname}/content/assets/images`,
       },
     },
+    'gatsby-transformer-remark',
   ],
   // Customize your site metadata:
   siteMetadata: {
-    title: 'My Blog Title',
-    author: 'My Name',
-    description: 'My site description...',
-    social: [
-      {
-        name: 'twitter',
-        url: 'https://twitter.com/gatsbyjs',
+    author: 'Brent Chow',
+    title: 'Brent Chow',
+    description: 'A personal blog.',
+    social: {
+      github: {
+        url: 'https://github.com/brentchow',
       },
-      {
-        name: 'github',
-        url: 'https://github.com/gatsbyjs',
+      instagram: {
+        url: 'https://www.instagram.com/brentchow',
       },
-    ],
+      linkedin: {
+        url: 'https://www.linkedin.com/in/brentchow/',
+      },
+      twitter: {
+        url: 'https://twitter.com/hellobrent',
+      },
+    },
   },
 };

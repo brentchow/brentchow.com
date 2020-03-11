@@ -2,7 +2,7 @@ import {graphql, StaticQuery} from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
-import {Layout, PostItem} from '../components';
+import {Layout, PostItem, SEO} from '../components';
 
 const BlogIndex = (__props) => (
   <StaticQuery
@@ -14,6 +14,14 @@ const BlogIndex = (__props) => (
             id
             slug
             title
+            featuredImage {
+              absolutePath
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
@@ -23,10 +31,11 @@ const BlogIndex = (__props) => (
 
       return (
         <Layout>
+          <SEO title="Words" />
           <Posts>
-            {posts.map((post) => (
-              <PostItem key={post.id} post={post} />
-            ))}
+            {posts.length > 0
+              ? posts.map((post) => (<PostItem key={post.id} post={post} />))
+              : <EmptyState>Writing... check back later.</EmptyState>}
           </Posts>
         </Layout>
       );
@@ -37,6 +46,10 @@ const BlogIndex = (__props) => (
 const Posts = styled.ul`
   list-style: none;
   padding-left: 0;
+`;
+
+const EmptyState = styled.p`
+  margin-top: 40px;
 `;
 
 export default BlogIndex;

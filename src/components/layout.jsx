@@ -1,4 +1,4 @@
-import {Link} from 'gatsby';
+import {graphql, Link, StaticQuery} from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -8,25 +8,57 @@ import 'typeface-inconsolata';
 import '../styles/layout.scss';
 
 const Layout = ({children}) => (
-  <Container>
-    <Header>
-      <Title>
-        <Link to="/">Brent Chow</Link>
-      </Title>
-      <Navigation>
-        <NavItem>
-          <Link to="/blog">Words</Link>
-        </NavItem>
-        <NavItem>
-          <a href="https://www.instagram.com/brentchow" rel="noopener noreferrer" target="_blank">Images</a>
-        </NavItem>
-      </Navigation>
-    </Header>
-    {children}
-    <Footer>
-      <p>&copy; {new Date().getFullYear()} Brent Chow</p>
-    </Footer>
-  </Container>
+  <StaticQuery
+    query={graphql`
+      query NavQuery {
+        site {
+          siteMetadata {
+            title
+            social {
+              instagram {
+                url
+              }
+              linkedin {
+                url
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={({site = {siteMetadata: {}}}) => {
+      const {social = {}, title = 'My Blog'} = site.siteMetadata;
+      const {
+        instagram = {url: 'https://www.instagram.com'},
+        linkedin = {url: 'https://www.linkedin.com'},
+      } = social;
+
+      return (
+        <Container>
+          <Header>
+            <Title>
+              <Link to="/">{title}</Link>
+            </Title>
+            <Navigation>
+              <NavItem>
+                <Link to="/blog">Words</Link>
+              </NavItem>
+              <NavItem>
+                <a href={instagram.url} rel="noopener noreferrer" target="_blank">Images</a>
+              </NavItem>
+              <NavItem>
+                <a href={linkedin.url} rel="noopener noreferrer" target="_blank">Resume</a>
+              </NavItem>
+            </Navigation>
+          </Header>
+          {children}
+          <Footer>
+            <p>&copy; {new Date().getFullYear()} {title}</p>
+          </Footer>
+        </Container>
+      );
+    }}
+  />
 );
 
 const Container = styled.div`
