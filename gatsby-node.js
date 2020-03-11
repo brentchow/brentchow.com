@@ -169,22 +169,24 @@ exports.createPages = ({graphql, actions}) => {
     const {allBlogPost} = result.data;
     const posts = allBlogPost.nodes;
 
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-      const next = index === 0 ? null : posts[index - 1].node;
-      const {id, slug} = post;
+    if (posts.length) {
+      posts.forEach((post, index) => {
+        const previous = index === posts.length - 1 ? null : posts[index + 1].node;
+        const next = index === 0 ? null : posts[index - 1].node;
+        const {id, slug} = post;
 
-      createPage({
-        path: slug,
-        component: postTemplate,
-        context: {
-          id,
-          next,
-          previous,
-          slug,
-        },
+        createPage({
+          path: slug,
+          component: postTemplate,
+          context: {
+            id,
+            next,
+            previous,
+            slug,
+          },
+        });
       });
-    });
+    }
 
     return null;
   });

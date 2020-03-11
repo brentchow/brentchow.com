@@ -7,7 +7,12 @@ import React from 'react';
 import Layout from '../components/layout';
 
 const BlogPost = ({data}) => {
-  const {blogPost = {}} = data;
+  const {blogPost} = data;
+
+  if (!blogPost) {
+    return '';
+  }
+
   const {body, featuredImage, title} = blogPost;
 
   return (
