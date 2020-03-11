@@ -12,7 +12,7 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "lint": "eslint .",
-    "deploy": "gatsby build && gh-pages -d public -b pages"
+    "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.5.7",
