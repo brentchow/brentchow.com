@@ -35,6 +35,7 @@ exports.createSchemaCustomization = ({actions, schema}) => {
       keywords: [String]
       featuredImage: File
       excerpt: String!
+      published: Boolean!
   }`);
 
   createTypes(
@@ -51,7 +52,7 @@ exports.createSchemaCustomization = ({actions, schema}) => {
         date: {type: 'Date!', extensions: {dateformat: {}}},
         tags: {type: '[String]!'},
         keywords: {type: '[String]!'},
-        featuredImage: {type: 'File'},
+        featuredImage: {type: 'File!'},
         excerpt: {
           type: 'String!',
           args: {
@@ -61,6 +62,9 @@ exports.createSchemaCustomization = ({actions, schema}) => {
             },
           },
           resolve: mdxResolverPassthrough('excerpt'),
+        },
+        published: {
+          type: 'Boolean!',
         },
         body: {
           type: 'String!',
@@ -123,6 +127,7 @@ exports.onCreateNode = async ({
       date: node.frontmatter.date,
       keywords: node.frontmatter.keywords || [],
       featuredImage: node.frontmatter.featuredImage || '',
+      published: node.frontmatter.published || false,
     };
 
     const mdxBlogPostId = createNodeId(`${node.id} >>> MdxBlogPost`);

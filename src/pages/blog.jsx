@@ -8,7 +8,7 @@ const BlogIndex = (__props) => (
   <StaticQuery
     query={graphql`
       query BlogIndexQuery {
-        allMdxBlogPost(sort: {fields: date, order: DESC}) {
+        allMdxBlogPost(sort: {fields: date, order: DESC}, filter: {published: {eq: true}}) {
           nodes {
             excerpt
             id
