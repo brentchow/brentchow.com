@@ -76,6 +76,10 @@ const Title = styled.h1`
 
   & a {
     color: #000;
+
+    @media (prefers-color-scheme: dark) {
+      color: #ebebeb;
+    }
   }
 `;
 

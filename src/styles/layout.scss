@@ -24,3 +24,22 @@ p, span, ul, ol {
 img {
   width: 100%;
 }
+
+@media (prefers-color-scheme: dark) {
+  * {
+    color: #ebebeb;
+  }
+
+  body {
+    background-color: #121212;
+  }
+  
+  a,
+  a:visited {
+    color: #9c9c9c;
+
+    &:hover {
+      color: #7e7e7e;
+    }
+  }
+}
