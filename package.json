@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "lint": "eslint .",
-    "deploy": "gatsby build"
+    "deploy": "gatsby build && firebase deploy"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.6",
@@ -51,7 +51,6 @@
     "eslint-plugin-jest": "^21.27.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.16.0",
-    "gh-pages": "^2.2.0"
+    "eslint-plugin-react": "^7.16.0"
   }
 }
