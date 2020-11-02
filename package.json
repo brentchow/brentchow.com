@@ -8,11 +8,11 @@
   "version": "0.0.1",
   "scripts": {
     "develop": "gatsby develop",
-    "dev": "npm develop",
+    "dev": "npm run develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "lint": "eslint .",
+    "lint": "eslint 'src/**/*.{js,jsx}'",
     "deploy": "gatsby build && firebase deploy"
   },
   "dependencies": {
