@@ -33,19 +33,19 @@ const Index = (__props) => (
             </p>
             <p>
               I'm passionate about building and supporting cross-functional teams driven by great product strategy. Over
-              the past 8+ years, I've led teams focusing on areas of new media including video streaming, 3D, 360 photos,
-              RTC, and new media developer tools.
+              the past 8+ years, I've led teams focusing on areas of new media including video streaming, 3D, 360
+              photos, RTC, and new media developer tools.
             </p>
             <p>
               In 2016, I co-founded <a href="https://www.svrf.com" rel="noopener noreferrer" target="_blank">Svrf</a>——the
               first search API for 3D face filters——where I led the product and engineering team. We worked with
-              high-profile brands including Snapchat, GIPHY, Nicki Minaj, Cardi B, Katy Perry, MTV, Lionsgate, and Rebecca
-              Minkoff. In July of 2020, <a href="https://poplar.studio/blog/ar-creative-platform-poplar-acquires-svrf-inc/" rel="noopener noreferrer" target="_blank">Svrf was acquired</a>.
+              high-profile brands including Snapchat, GIPHY, Nicki Minaj, Cardi B, Katy Perry, MTV, Lionsgate, and
+              Rebecca Minkoff. In July of 2020, <a href="https://poplar.studio/blog/ar-creative-platform-poplar-acquires-svrf-inc/" rel="noopener noreferrer" target="_blank">Svrf was acquired</a>.
             </p>
             <p>
               I've been a people manager for 4+ years, and I deeply enjoy supporting people's journeys and growth. My
-              teams are known to deliver on a lean, iterative product release cycle—consistently delivering results with a
-              proven track record.
+              teams are known to deliver on a lean, iterative product release cycle—consistently delivering results with
+              a proven track record.
             </p>
             <p>
               Some other companies I've worked with include: Brud (the creators of <a href="https://variety.com/2020/digital/news/miquela-virtual-influencer-signs-caa-1234599368/" rel="noopener noreferrer" target="_blank">Miquela</a>) and AnyMeeting (acquired).
