@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
   },
   extends: [
+    'plugin:react/recommended',
     'airbnb',
   ],
   parserOptions: {
@@ -10,11 +11,16 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react'],
+  plugins: [
+    'react',
+  ],
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js'],
+        extensions: [
+          '.js',
+          '.jsx',
+        ],
       },
     },
   },
@@ -75,13 +81,13 @@ module.exports = {
     // functions/objects being `new`ed need to be uppercase, ex: `let f = new Thing()`
     'new-cap': [
       2,
-      { newIsCap: true, capIsNew: false },
+      {newIsCap: true, capIsNew: false},
     ],
 
     // don't allow unused variables/params unless they are prefixed with 2 underscores
     'no-unused-vars': [
       2,
-      { args: 'all', argsIgnorePattern: '^__', varsIgnorePattern: '^__' },
+      {args: 'all', argsIgnorePattern: '^__', varsIgnorePattern: '^__'},
     ],
 
     // don't require lines between class properties
