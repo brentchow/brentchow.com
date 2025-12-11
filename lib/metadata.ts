@@ -1,0 +1,30 @@
+import type { Metadata } from 'next';
+import type { GenerateMetadataOptions } from '@/types/Metadata';
+import { siteConfig } from '../site-config';
+
+export function generateMetadata({
+  title,
+  description,
+  featuredImage,
+}: GenerateMetadataOptions = {}): Metadata {
+  const fullTitle =
+    title && title !== siteConfig.title ? `${siteConfig.title} | ${title}` : siteConfig.title;
+  const metaDescription = description || siteConfig.description;
+
+  return {
+    title: fullTitle,
+    description: metaDescription,
+    openGraph: {
+      title: fullTitle,
+      description: metaDescription,
+      type: 'website',
+      images: featuredImage,
+    },
+    twitter: {
+      card: 'summary',
+      title: fullTitle,
+      description: metaDescription,
+      images: featuredImage,
+    },
+  };
+}
