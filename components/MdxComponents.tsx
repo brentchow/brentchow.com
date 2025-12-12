@@ -3,21 +3,11 @@ import Image, { type ImageProps } from 'next/image';
 import Link from 'next/link';
 
 export const mdxComponents = {
-  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h1 className="pt-2 pb-4" {...props} />
-  ),
-  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="pt-2 pb-3" {...props} />
-  ),
-  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className="pt-2 pb-2" {...props} />
-  ),
-  h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h4 className="pt-2 pb-1" {...props} />
-  ),
-  h5: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h5 className="pt-2 pb-1" {...props} />
-  ),
+  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h1 className="pt-2 pb-4" {...props} />,
+  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h2 className="pt-2 pb-3" {...props} />,
+  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h3 className="pt-2 pb-2" {...props} />,
+  h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h4 className="pt-2 pb-1" {...props} />,
+  h5: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h5 className="pt-2 pb-1" {...props} />,
   img: (props: ImageProps) => (
     <Image
       className="w-full max-w-[600px] max-h-[400px] mx-auto object-contain"

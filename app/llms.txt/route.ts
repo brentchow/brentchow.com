@@ -5,11 +5,7 @@ import { siteConfig } from '@/site-config';
 export async function GET(__request: Request) {
   const posts = await getPublishedPosts();
   const { title, description, siteUrl, navLinks } = siteConfig;
-
-  // Get homepage content for additional context
   const { content, frontmatter } = await getMdxData('content/homepage.mdx');
-  // Extract first paragraph from homepage for summary
-  // const homepageSummary = homepageContent.split('\n\n')[0] || description;
 
   const llmsTxt = `# ${title}
 
