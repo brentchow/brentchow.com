@@ -14,7 +14,7 @@
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "typecheck": "tsc --noEmit",
-    "deploy": "next build && firebase deploy"
+    "deploy": "next build && vercel"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

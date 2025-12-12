@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   title: 'Brent Chow',
   description:
     'Brent Chow is a product leader with 10+ years building zero-to-one products. 3 of 5 startups acquired. Forbes 30 Under 30. Former UP.Labs, BCG Digital Ventures, Svrf (acquired), Techstars NYC.',
-  siteUrl: 'https://brentchow.com',
+  siteUrl: 'https://www.brentchow.com',
   navLinks: [
     {
       label: 'Words',

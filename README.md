@@ -8,7 +8,7 @@ This website is built with [Next.js](https://nextjs.org/) and uses MDX for conte
 
 1. Node.js (I suggest using [NVM](https://github.com/nvm-sh/nvm) to manage your Node.js versions)
 2. [Yarn](https://yarnpkg.com/getting-started/install)
-3. [Firebase CLI](https://firebase.google.com/docs/cli#mac-linux-npm) (for deployment)
+3. [Vercel CLI](https://vercel.com/docs/cli) (for deployment)
 
 ### Getting Started
 
@@ -52,7 +52,7 @@ The site will be available at [http://localhost:3000](http://localhost:3000).
 - **Styling**: Tailwind CSS
 - **Content**: MDX with `next-mdx-remote`
 - **Linting**: Biome
-- **Hosting**: Firebase Hosting
+- **Hosting**: Vercel Hosting
 
 ### Available Scripts
 
@@ -62,15 +62,25 @@ The site will be available at [http://localhost:3000](http://localhost:3000).
 - `yarn lint` - Run Biome linter
 - `yarn lint:fix` - Fix linting issues automatically
 - `yarn typecheck` - Run TypeScript type checking
-- `yarn deploy` - Build and deploy to Firebase
+- `yarn deploy` - Build and deploy to Vercel
 
 ## 🚀 Deployment
 
-This project is hosted using Firebase Hosting.
+This project is hosted using Vercel Hosting.
+
+### Setup Deployments to Vercel
+
+To setup deployments on Vercel use the Vercel CLI tool.
+
+```shell
+npm i -g vercel
+```
+
+Then run the `vercel` command to connect to your Vercel account and deploy.
 
 ### Auto-deployments
 
-Auto-deployments are triggered when a push occurs on the `main` branch. This is managed by GitHub Action workflows found in `.github/workflows` directory.
+Auto-deployments are triggered when a push occurs on the `main` branch. This is managed by Vercel's integration
 
 ### Manual deployments
 
@@ -78,11 +88,10 @@ Auto-deployments are triggered when a push occurs on the `main` branch. This is 
 yarn deploy
 ```
 
-This will build the Next.js application and deploy it to Firebase Hosting.
+This will build the Next.js application and deploy it to Vercel Hosting.
 
 ## Todo
 
-- [] Setup for Vercel deployments and remove firebase
 - [] [MDX support for GitHub flavored markdown (GFM)](https://mdxjs.com/guides/gfm/)
 - [] [MDX support for Syntax Highlighting](https://mdxjs.com/guides/syntax-highlighting/)
 - [] [MDX support for embeds](https://mdxjs.com/guides/embed/)

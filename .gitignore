@@ -17,15 +17,13 @@ node_modules/
 !.yarn/releases
 !.yarn/versions
 
-# next files
+# build files
 .next/
 next-env.d.ts
+tsconfig.tsbuildinfo
 
 # Mac files
 .DS_Store
-
-# Firebase
-.firebase
 
 # Vercel
 .vercel
