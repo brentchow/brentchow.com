@@ -14,7 +14,7 @@ export default async function BlogPage() {
   return (
     <>
       {posts.length > 0 ? (
-        <div className="flex flex-col gap-4 pt-4">
+        <div className="flex flex-col gap-4 pt-4 px-4 sm:px-0">
           {posts.map((post) => (
             <PostItem key={post.slug} post={post} />
           ))}
