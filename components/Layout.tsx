@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const { title, navLinks } = siteConfig;
 
   return (
-    <div className="mx-auto max-w-[600px] w-full py-4">
+    <div className="mx-auto max-w-[600px] w-full py-4 px-4 md:px-0">
       <header className="text-center">
         <h1 className="mb-3 font-bold">
           <Link href="/" className="text-foreground! no-underline!">

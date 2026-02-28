@@ -40,7 +40,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <h1 className="font-sans pt-4 leading-none">{title}</h1>
+      <h1 className="font-sans pt-4 leading-snug">{title}</h1>
       {featuredImage && (
         <Image
           src={featuredImage}
