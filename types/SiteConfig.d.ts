@@ -8,5 +8,7 @@ export interface SiteConfig {
   title: string;
   description: string;
   siteUrl: string;
+  /* Strongly recommended for Twitter cards in the format `@username` */
+  twitterHandle?: string;
   navLinks: NavLink[];
 }

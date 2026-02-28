@@ -6,6 +6,7 @@ export function generateMetadata({
   title,
   description,
   featuredImage,
+  canonicalUrl,
 }: GenerateMetadataOptions = {}): Metadata {
   const fullTitle =
     title && title !== siteConfig.title ? `${siteConfig.title} | ${title}` : siteConfig.title;
@@ -19,12 +20,18 @@ export function generateMetadata({
       description: metaDescription,
       type: 'website',
       images: featuredImage,
+      url: canonicalUrl,
     },
     twitter: {
       card: 'summary',
       title: fullTitle,
       description: metaDescription,
+      creator: siteConfig.twitterHandle,
       images: featuredImage,
+      site: canonicalUrl,
+    },
+    alternates: {
+      canonical: canonicalUrl,
     },
   };
 }
