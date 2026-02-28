@@ -36,7 +36,7 @@ export const mdxComponents = {
       </a>
     );
   },
-  code: (props: React.HTMLAttributes<HTMLModElement>) => (
+  code: (props: React.HTMLAttributes<HTMLElement>) => (
     <code className="text-md font-mono text-neutral-700 dark:text-neutral-400" {...props} />
   ),
 } satisfies MDXComponents;
