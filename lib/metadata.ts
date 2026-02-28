@@ -26,6 +26,7 @@ export function generateMetadata({
       card: 'summary',
       title: fullTitle,
       description: metaDescription,
+      creator: siteConfig.twitterHandle,
       images: featuredImage,
       site: canonicalUrl,
     },
