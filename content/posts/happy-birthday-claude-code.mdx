@@ -1,0 +1,89 @@
+---
+title: Claude Code Turns 1. Here's What It Changed — and What It Didn't.
+publishedAt: 2026-02-24
+featuredImage: /images/claude_code_turns_1_cover.png
+description: "A year ago today, Anthropic released Claude Code in research preview. Claude Code changed what's fast. It didn't change what's hard."
+published: true
+canonicalUrl: https://www.linkedin.com/pulse/claude-code-turns-1-heres-what-changed-didnt-brent-chow-dluef
+---
+A year ago today, Anthropic released Claude Code in [research preview](https://www.anthropic.com/news/claude-3-7-sonnet). It was a terminal tool that could chat with you, edit files, and run bash commands. Simple.
+
+Twelve months later, it's a [$2.5 billion product](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation). It's being used by engineers at [Microsoft, Google, and Netflix](https://fortune.com/2026/01/24/anthropic-boris-cherny-claude-code-non-coders-software-engineers/). It spawned [Claude Cowork](https://claude.com/product/cowork), an entirely new product category for non-developers. And it fundamentally changed how I build products.
+
+I've spent the last decade building zero-to-one products — five startups, three acquisitions, and more MVPs than I can count. I've been building with Claude Code daily for the past several months, most recently on an AI workflow orchestrator. And after watching a year of breathless "AI changes everything" takes, I think most of the conversation is focused on the wrong thing.
+
+## What a year at AI speed looks like
+The raw pace of improvement is the story. A year ago, there was no plan mode — you just prompted and hoped. No Skills marketplace. No agent orchestration. No way for non-developers to use any of it.
+
+Today, Claude Code has plan mode for structured reasoning, a Skills framework that lets you package reusable capabilities, experimental Agent Teams for multi-agent coordination, and Cowork extending the same agentic architecture to knowledge workers. It's available in the terminal, Claude Desktop, through Chrome and VS Code plugins, and on mobile.
+
+That's not a product update. That's a platform emerging.
+
+But here's what I've noticed after building with it every day: **the tools got dramatically faster. The hard problems stayed exactly the same.**
+
+## The thesis
+**Claude Code changed what's fast. It didn't change what's hard.**
+
+Knowing what to build, for whom, and why — that's exactly as difficult as it was before AI coding tools existed. Maybe more difficult, because the speed of execution creates an illusion of progress that can mask bad product decisions. When you can ship anything in hours, the discipline to ship the right thing becomes the real differentiator.
+
+That tension — between what's now easy and what's still hard — is where I think the most important lessons live. Here are three.
+
+## 1. The future is AI orchestration, not vibe coding
+Everyone is talking about vibe coding. And it works — for prototypes, for side projects, for getting something in front of users fast. But if you're building a product that needs to be maintained, scaled, and trusted, vibe coding is the starting point, not the destination.
+
+What I've found building with Claude Code daily is that planning has become more important, not less. I spend 2-3x the time on planning and scoping as the agent spends executing the build. That's not a bug — Boris Cherny, the head of Claude Code at Anthropic, has said the same thing: to pour your energy into planning with AI for the best chances of a 1-shot implementation.
+
+Here's how I think about it: AI doesn't need micromanagement. It needs a strong compass. Give it clear direction and constraints, and it'll surprise you with solutions you wouldn't have considered. Give it vague direction, and it'll confidently build the wrong thing — fast.
+
+**The real unlock isn't writing code with AI. It's orchestrating AI across the entire product development lifecycle.**
+
+### Where this is going
+The biggest productivity gains won't come from better coding tools in isolation. They'll come from end-to-end AI workflows that connect design, development, testing, deployment, and feedback into a continuous loop. 
+
+At SaySo, my last startup, we integrated our agents with access to Figma, Slack, databases, repos, and logging tools — and the speed difference wasn't incremental. It changed how we triaged bugs, defined scope, and moved from idea to shipped feature.
+
+MCP integrations are the bridge to making this the default. And startups have a structural advantage here — they're not fighting years of siloed enterprise data and inconsistent taxonomies across legacy systems. MCPs will be as important as APIs. The companies that own their data integrations will own their AI advantage.
+
+**The teams that figure out orchestration across their tool stack — not just code generation — will build 10x faster than everyone still prompting one file at a time.**
+
+## 2. Foundations determine whether speed helps or hurts
+When AI can generate code in minutes, the quality of your foundations determines whether that speed compounds or creates compounding debt. AI amplifies good architecture and bad architecture equally.
+
+This isn't just about documentation, though that's part of it. It's about the entire substrate — testing, linting, formatting, rules, type safety. And now there's a new layer: you're maintaining these foundations for humans and agents. Files like CLAUDE.md and AGENTS.md aren't optional extras. They're how you ensure AI operates within the right constraints. **Repo discipline matters more than ever, not less.**
+
+### Where this is going
+The first wave of AI context management was markdown files — static documents that agents read at the start of a session. But markdown files add bloat, they don't scale, and they can't be queried.
+
+The next wave is vector databases: dynamic context that agents can search and retrieve as needed, not flat files they read top to bottom, and agent-to-agent communication like [Anthropic's experimental Agent Teams (also known as swarms)](https://www.threads.com/@boris_cherny/post/DUYr3wwkxHH?xmt=AQF0CIBq2COtWr-RBouBM3KojUHR3zzdXF3bjD7Pbosb8A). Think of the difference between giving someone a manual versus giving them a search engine and a radio to communicate with each other across a job site.
+
+The ceiling on AI productivity right now isn't model intelligence — it's continuity and memory management across sessions. **Agent-to-agent communication and persistent project memory will define the next major leap.**
+
+## 3. Building faster doesn't mean building right
+This is the one that keeps me up at night. When building is cheap, everything feels possible. Every feature request is "just a few hours." Every pivot is "easy to test." The result is a new kind of thrashing — not from inability to execute, but from the paradox of infinite execution capacity.
+
+Scope changes faster than you can track it when building costs approach zero. Source of truth in product scoping is a genuinely unsolved problem in AI-accelerated development. And the temptation to ship everything because you can leads directly to feature bloat and user exhaustion.
+
+**When building is cheap, the product leader's job isn't to move faster. It's to say no faster.**
+
+### Where this is going
+Continuous discovery becomes more critical, not less. Product leaders need to consolidate qualitative signals — user feedback, interviews, support tickets — with quantitative data from A/B tests, transactional patterns, and behavioral analytics. And they need to do it faster, because the build cycle won't wait. 
+
+The PM role in an AI-accelerated world doesn't get simpler. It gets more demanding. **The builders who maintain deep user empathy while moving at AI speed will be the ones who build things that last.**
+
+## Why Claude Code, specifically
+Anthropic isn't winning the consumer AI race on volume. But they may be winning the one that matters more for builders. The decision to meet developers where they already work — the terminal, not a new IDE — was a product strategy insight that explains a lot of the adoption. And the expansion from terminal to GUI, Chrome extension, VS Code and Cursor plugins, and Cowork for non-developers shows a platform strategy that's just beginning.
+
+There's a strategic gap worth watching: today's AI development tools lean heavily on non-deterministic LLM inference, even for logic that should be deterministic. That creates room for startups building reliable, structured tooling on top of Anthropic's foundation. [Cursor](https://cursor.com/agents), [Warp](https://warp.dev/), [Amp](https://ampcode.com/) — the ecosystem is forming. And if Cowork's trajectory follows Claude Code's, it'll be further along in twelve months than Claude Code is today.
+
+## One year in
+The tools are better. Dramatically, almost unrecognizably better. But the hard problems — knowing what to build, for whom, and why it matters — are the same ones they've always been. **The builders who remember that will be the ones who win.**
+
+---
+
+**About the author:** Brent Chow is a product leader with 10+ years building zero-to-one products at startups and venture studios. Three of five startups where he led product were acquired. He's a Forbes 30 Under 30 recipient, Techstars NYC alum, and is currently exploring what's next in AI-native product development. Say hi on [LinkedIn](https://www.linkedin.com/in/brentchow/).
+
+_Written by a human with the assistance of Claude Opus 4.6_
+
+---
+
+_This post was originally published on [LinkedIn](https://www.linkedin.com/pulse/claude-code-turns-1-heres-what-changed-didnt-brent-chow-dluef)._
