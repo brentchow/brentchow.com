@@ -9,6 +9,7 @@ export interface MdxFrontmatter {
 
 export interface PostFrontmatter extends MdxFrontmatter {
   publishedAt: string;
+  canonicalUrl?: string;
 }
 export interface Post {
   slug: string;

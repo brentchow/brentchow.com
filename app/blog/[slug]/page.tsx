@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return generatePageMetadata({
     title: post.frontmatter.title,
     description: post.frontmatter.description,
+    canonicalUrl: post.frontmatter.canonicalUrl,
   });
 }
 
@@ -39,9 +40,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <h1 className="font-sans pt-4">{title}</h1>
+      <h1 className="font-sans pt-4 leading-none">{title}</h1>
       {featuredImage && (
-        <Image src={featuredImage} alt={title} width={600} height={400} className="w-full" />
+        <Image
+          src={featuredImage}
+          alt={title}
+          width={600}
+          height={400}
+          className="w-full leading-0 py-4"
+        />
       )}
       <div className="font-mono prose prose-lg max-w-none">
         <MDXRemote source={content} components={mdxComponents} />
